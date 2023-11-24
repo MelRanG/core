@@ -20,4 +20,13 @@ public class SingletonTest {
         //매번 다른 객체가 생성된다.
         assertThat(memberService1).isNotSameAs(memberService2);
     }
+
+    @Test
+    @DisplayName("싱글톤 패턴을 적용한 객체 사용")
+    void singletonServiceTest(){
+        SingletonService instance1 = SingletonService.getInstance();
+        SingletonService instance2 = SingletonService.getInstance();
+        // == 비교(인스턴스 비교)는 same으로 해야한다. 객체의 주소값 비교
+        assertThat(instance1).isSameAs(instance2);
+    }
 }
