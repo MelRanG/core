@@ -13,7 +13,7 @@ public class OrderServiceImpl implements OrderService{
     //배우는 연기만 해야지 배역을 고르면 안된다. 배역을 고르고, 조명을 세팅하는 건 별도의 공연기획자가 해야한다.
     //OrderServiceImpl은 구현체를 뭘로 할지 선택하면 안된다.
     private final MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
